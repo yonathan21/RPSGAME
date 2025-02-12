@@ -19,5 +19,25 @@ optionImages.forEach((image,index) => {
     let cpuImages = ["rock.png", "paper.png", "scissors.png"];
 
     cpuResult.src = cpuImages[randomNumber];
+
+    let cpuValue = ["R", "P", "S"][randomNumber];
+    let userValue = ["R", "P", "S"][index];
+
+    let outcomes = {
+      RR: "Draw",
+      RP: "CPU",
+      RS: "User",
+      PP: "Draw",
+      PR: "User",
+      PS: "CPU",
+      SS: "Draw",
+      SR: "CPU",
+      SP: "User",
+    }
+
+    let outComeValue = outcomes[userValue + cpuValue];
+
+    result.textContent = userValue === cpuValue ? "Match Draw" : `${outComeValue} won!!`;
+    
   });
 });
