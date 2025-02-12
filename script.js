@@ -12,5 +12,12 @@ optionImages.forEach((image,index) => {
       index !== index2 &&  image2.classList.remove("active");
     });
 
+    let imageSrc = e.target.querySelector("img").src;
+    userResult.src = imageSrc;
+
+    let randomNumber = Math.floor(Math.random() * 3);
+    let cpuImages = ["rock.png", "paper.png", "scissors.png"];
+
+    cpuResult.src = cpuImages[randomNumber];
   });
 });
